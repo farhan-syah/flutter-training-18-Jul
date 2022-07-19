@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_18_jul/const.dart';
+import 'package:training_18_jul/home.screen.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({Key? key}) : super(key: key);
@@ -43,36 +44,48 @@ class LandingScreen extends StatelessWidget {
               height: 30,
             ),
             // Button
-            Stack(
-              alignment: Alignment.centerLeft,
-              children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 15,
-                        offset: const Offset(6, 8),
-                        color: Colors.black.withAlpha(50),
-                      ),
-                    ],
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 15),
-                  child: Text(
-                    'Get Started',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: textColor,
+            Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreen(),
                     ),
-                  ),
-                )
-              ],
+                  );
+                },
+                child: Stack(
+                  alignment: Alignment.centerLeft,
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 15,
+                            offset: const Offset(6, 8),
+                            color: Colors.black.withAlpha(50),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 15),
+                      child: Text(
+                        'Get Started',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: textColor,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
             )
           ],
         ),
