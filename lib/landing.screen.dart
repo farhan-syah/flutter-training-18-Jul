@@ -14,11 +14,10 @@ class LandingScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Image
-            Container(
-              color: Colors.grey.withAlpha(100),
+            SizedBox(
               height: 400,
               width: MediaQuery.of(context).size.width,
-              child: const Center(child: Text('Image Here')),
+              child: Image.asset('assets/images/pngegg.png'),
             ),
             // Header
             const Text(
