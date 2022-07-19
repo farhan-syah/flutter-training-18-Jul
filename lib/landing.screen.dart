@@ -40,7 +40,41 @@ class LandingScreen extends StatelessWidget {
                 color: textColor,
               ),
             ),
+            const SizedBox(
+              height: 30,
+            ),
             // Button
+            Stack(
+              alignment: Alignment.centerLeft,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 15,
+                        offset: const Offset(6, 8),
+                        color: Colors.black.withAlpha(50),
+                      ),
+                    ],
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Text(
+                    'Get Started',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: textColor,
+                    ),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
