@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_18_jul/home.screen.dart';
+import 'package:training_18_jul/landing.screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const LandingScreen(),
     );
   }
 }
