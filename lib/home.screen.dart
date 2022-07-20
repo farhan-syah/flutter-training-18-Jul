@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:training_18_jul/const.dart';
 
@@ -62,9 +63,14 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(7),
                   decoration: BoxDecoration(
-                    color: Colors.cyan.shade300,
-                    shape: BoxShape.circle,
-                  ),
+                      color: Colors.cyan.shade300,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                            blurRadius: 15,
+                            color: Colors.black.withAlpha(50),
+                            offset: const Offset(6, 6))
+                      ]),
                   child: const Icon(
                     Icons.calendar_month_outlined,
                     size: 16,
@@ -72,6 +78,49 @@ class HomeScreen extends StatelessWidget {
                   ),
                 )
               ],
+            ),
+            const SizedBox(height: 20),
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: const [
+                        Expanded(
+                          flex: 3,
+                          child: Container2(label: 'Done', number: '22'),
+                        ),
+                        SizedBox(height: 20),
+                        Expanded(
+                          flex: 2,
+                          child: Container2(label: 'Ongoing', number: '10'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: const [
+                        Expanded(
+                            flex: 2,
+                            child:
+                                Container2(label: 'In progress', number: '7')),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Expanded(
+                          flex: 3,
+                          child: Container2(
+                              label: 'Waiting for review', number: '12'),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
@@ -159,6 +208,44 @@ class ImageContainer extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50), color: Colors.white),
       child: CircleAvatar(backgroundImage: AssetImage(assetImagePath)),
+    );
+  }
+}
+
+class Container2 extends StatelessWidget {
+  final String label;
+  final String number;
+
+  const Container2({
+    Key? key,
+    required this.label,
+    required this.number,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.indigo, borderRadius: BorderRadius.circular(15)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(
+              number,
+              style: TextStyle(
+                  fontSize: 30, color: textColor2, fontWeight: FontWeight.w600),
+            ),
+          ),
+          Center(
+            child: Text(
+              label,
+              style: TextStyle(fontSize: 14, color: textColor3),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
