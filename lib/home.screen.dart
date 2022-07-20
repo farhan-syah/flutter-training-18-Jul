@@ -46,64 +46,99 @@ class HomeScreen extends StatelessWidget {
               style: TextStyle(fontSize: 16, color: textColor3),
             ),
             const SizedBox(height: 30),
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                  color: Colors.indigo,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                        blurRadius: 15,
-                        color: Colors.black.withAlpha(20),
-                        offset: const Offset(0, 5))
-                  ]),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    'Mobile App Design',
+            const Container1(),
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Monthly Review',
                     style: TextStyle(
-                      fontSize: 17,
-                      color: textColor2,
-                      fontWeight: FontWeight.w500,
-                    ),
+                        color: textColor2,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600),
                   ),
-                  const SizedBox(height: 5),
-                  Text(
-                    'Mike and Anita',
-                    style: TextStyle(color: textColor3),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    color: Colors.cyan.shade300,
+                    shape: BoxShape.circle,
                   ),
-                  const SizedBox(height: 12),
-                  Row(
-                    children: [
-                      //Left component
-                      Expanded(
-                        child: Stack(
-                          children: const [
-                            ImageContainer(
-                                assetImagePath:
-                                    'assets/images/profilePic2.jpeg'),
-                            Padding(
-                              padding: EdgeInsets.only(left: 28),
-                              child: ImageContainer(
-                                  assetImagePath:
-                                      'assets/images/profilePic3.jpeg'),
-                            )
-                          ],
-                        ),
-                      ),
-                      // Right component
-                      Text(
-                        'Now',
-                        style: TextStyle(color: textColor3, fontSize: 12),
-                      ),
-                    ],
-                  )
-                ],
-              ),
+                  child: const Icon(
+                    Icons.calendar_month_outlined,
+                    size: 16,
+                    color: Colors.white,
+                  ),
+                )
+              ],
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Container1 extends StatelessWidget {
+  const Container1({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+          color: Colors.indigo,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+                blurRadius: 15,
+                color: Colors.black.withAlpha(20),
+                offset: const Offset(0, 5))
+          ]),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            'Mobile App Design',
+            style: TextStyle(
+              fontSize: 17,
+              color: textColor2,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          const SizedBox(height: 5),
+          Text(
+            'Mike and Anita',
+            style: TextStyle(color: textColor3),
+          ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              //Left component
+              Expanded(
+                child: Stack(
+                  children: const [
+                    ImageContainer(
+                        assetImagePath: 'assets/images/profilePic2.jpeg'),
+                    Padding(
+                      padding: EdgeInsets.only(left: 28),
+                      child: ImageContainer(
+                          assetImagePath: 'assets/images/profilePic3.jpeg'),
+                    )
+                  ],
+                ),
+              ),
+              // Right component
+              Text(
+                'Now',
+                style: TextStyle(color: textColor3, fontSize: 12),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }
