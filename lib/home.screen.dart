@@ -18,15 +18,9 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(right: 30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(3),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: Colors.white),
-                  child: const CircleAvatar(
-                      backgroundImage:
-                          AssetImage('assets/images/profile_pic_men.webp')),
+              children: const [
+                ImageContainer(
+                  assetImagePath: 'assets/images/profile_pic_men.webp',
                 ),
               ],
             ),
@@ -54,11 +48,11 @@ class HomeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.indigo,
                   borderRadius: BorderRadius.circular(15),
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                         blurRadius: 15,
-                        color: Colors.black12,
-                        offset: Offset(0, 5))
+                        color: Colors.black.withAlpha(20),
+                        offset: const Offset(0, 5))
                   ]),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -76,12 +70,57 @@ class HomeScreen extends StatelessWidget {
                     'Mike and Anita',
                     style: TextStyle(color: textColor3),
                   ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      //Left component
+                      Expanded(
+                        child: Stack(
+                          children: const [
+                            ImageContainer(
+                                assetImagePath:
+                                    'assets/images/profilePic2.jpeg'),
+                            Padding(
+                              padding: EdgeInsets.only(left: 28),
+                              child: ImageContainer(
+                                  assetImagePath:
+                                      'assets/images/profilePic3.jpeg'),
+                            )
+                          ],
+                        ),
+                      ),
+                      // Right component
+                      Text(
+                        'Now',
+                        style: TextStyle(color: textColor3, fontSize: 12),
+                      ),
+                    ],
+                  )
                 ],
               ),
             )
           ],
         ),
       ),
+    );
+  }
+}
+
+class ImageContainer extends StatelessWidget {
+  final String assetImagePath;
+
+  const ImageContainer({
+    required this.assetImagePath,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(3),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50), color: Colors.white),
+      child: CircleAvatar(backgroundImage: AssetImage(assetImagePath)),
     );
   }
 }
