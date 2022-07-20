@@ -21,23 +21,23 @@ class LandingScreen extends StatelessWidget {
               child: Image.asset('assets/images/pngegg.png'),
             ),
             // Header
-            const Text(
+            Text(
               'Manage your daily tasks',
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.w700,
-                color: textColor,
+                color: textColor1,
               ),
             ),
             const SizedBox(
               height: 30,
             ),
             // Subheadline
-            const Text(
+            Text(
               'Team and Project management with solution providing App',
               style: TextStyle(
                 fontSize: 16,
-                color: textColor,
+                color: textColor1,
               ),
             ),
             const SizedBox(
@@ -72,14 +72,14 @@ class LandingScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 15),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15),
                       child: Text(
                         'Get Started',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
-                          color: textColor,
+                          color: textColor1,
                         ),
                       ),
                     )

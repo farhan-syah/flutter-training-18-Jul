@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_18_jul/const.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
         leading: const Icon(Icons.menu),
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
+        elevation: 0,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 30),
@@ -30,6 +32,23 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              'Hi Ghulam',
+              style: TextStyle(fontSize: 36, color: textColor2),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              '6 Tasks are pending',
+              style: TextStyle(fontSize: 16, color: textColor3),
+            ),
+          ],
+        ),
       ),
     );
   }
