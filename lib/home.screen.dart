@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         leading: Builder(builder: (context) {
           return InkWell(
-            child: const Icon(Icons.draw),
+            child: const Icon(Icons.menu),
             onTap: () {
               Scaffold.of(context).openDrawer();
             },
@@ -36,9 +36,31 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       drawer: Drawer(
-          child: Container(
-        color: Colors.indigo.shade300,
-      )),
+        child: Material(
+          color: Colors.indigo.shade300,
+          child: ListTileTheme(
+            textColor: Colors.indigo.shade800,
+            child: SafeArea(
+              child: Column(
+                children: [
+                  ListTile(
+                    title: const Text('Menu 1'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Menu 2'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
