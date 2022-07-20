@@ -10,7 +10,14 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.indigo.shade800,
       appBar: AppBar(
-        leading: const Icon(Icons.menu),
+        leading: Builder(builder: (context) {
+          return InkWell(
+            child: const Icon(Icons.draw),
+            onTap: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         elevation: 0,
@@ -28,6 +35,10 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+      drawer: Drawer(
+          child: Container(
+        color: Colors.indigo.shade300,
+      )),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
