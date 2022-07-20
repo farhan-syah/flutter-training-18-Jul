@@ -125,6 +125,38 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        elevation: 0,
+        color: Colors.transparent,
+        child: SizedBox(
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const Icon(
+                Icons.home_outlined,
+                color: Colors.white70,
+                size: 32,
+              ),
+              Icon(
+                Icons.description_outlined,
+                color: Colors.blue.shade300.withOpacity(0.7),
+                size: 32,
+              ),
+              const Icon(
+                Icons.person_outline,
+                color: Colors.white70,
+                size: 32,
+              ),
+              const Icon(
+                Icons.notifications_outlined,
+                color: Colors.white70,
+                size: 32,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
