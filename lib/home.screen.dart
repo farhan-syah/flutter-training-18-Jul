@@ -40,13 +40,45 @@ class HomeScreen extends StatelessWidget {
           children: [
             Text(
               'Hi Ghulam',
-              style: TextStyle(fontSize: 36, color: textColor2),
+              style: TextStyle(
+                  fontSize: 36, color: textColor2, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 3),
             Text(
               '6 Tasks are pending',
               style: TextStyle(fontSize: 16, color: textColor3),
             ),
+            const SizedBox(height: 30),
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                  color: Colors.indigo,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: const [
+                    BoxShadow(
+                        blurRadius: 15,
+                        color: Colors.black12,
+                        offset: Offset(0, 5))
+                  ]),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    'Mobile App Design',
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: textColor2,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    'Mike and Anita',
+                    style: TextStyle(color: textColor3),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
