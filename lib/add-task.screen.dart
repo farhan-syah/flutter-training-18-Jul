@@ -54,6 +54,19 @@ class _TaskContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(task);
+    return Card(
+      elevation: 3,
+      child: ListTile(
+        title: Text(
+          task,
+          style: const TextStyle(fontWeight: FontWeight.w600),
+        ),
+        trailing: IconButton(
+          color: Colors.red,
+          icon: const Icon(Icons.cancel),
+          onPressed: () {},
+        ),
+      ),
+    );
   }
 }
