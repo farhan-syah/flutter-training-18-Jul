@@ -14,3 +14,15 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+To learn more:
+
+- Flutter State Management
+  - Inherited widget, Provider, Riverpod
+- Flutter Persistant Storage
+  - FSQlite, Hive, SharedPreference, GetStorage
+- HTTP/Networking
+  - How to use REST api using Flutter
+  - Dio / Dart HTTP
+  - Asynchronous program in flutter
+  - Stream in flutter (e.g: Firebase, WebSocket)

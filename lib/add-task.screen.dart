@@ -41,7 +41,6 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               (index) => _TaskContainer(
                 task: taskList[index],
                 onPressed: () {
-                  // Show Dialog
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
