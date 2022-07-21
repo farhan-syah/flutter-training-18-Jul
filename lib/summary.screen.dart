@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_18_jul/widgets/date-slider.widget.dart';
 import 'package:training_18_jul/widgets/image-container.widget.dart';
 import 'package:training_18_jul/widgets/month-slider.widget.dart';
 
@@ -49,6 +50,7 @@ class SummaryScreen extends StatelessWidget {
         child: Column(
           children: const [
             MonthSlider(),
+            DateSlider(),
           ],
         ),
       ),
