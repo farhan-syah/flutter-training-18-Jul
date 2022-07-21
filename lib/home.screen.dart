@@ -289,27 +289,34 @@ class Container2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          color: Colors.indigo, borderRadius: BorderRadius.circular(15)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Text(
-              number,
-              style: TextStyle(
-                  fontSize: 30, color: textColor2, fontWeight: FontWeight.w600),
-            ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(15),
+      child: Material(
+        color: Colors.indigo,
+        child: InkWell(
+          onTap: () {},
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text(
+                  number,
+                  style: TextStyle(
+                      fontSize: 30,
+                      color: textColor2,
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+              Center(
+                child: Text(
+                  label,
+                  style: TextStyle(fontSize: 14, color: textColor3),
+                ),
+              )
+            ],
           ),
-          Center(
-            child: Text(
-              label,
-              style: TextStyle(fontSize: 14, color: textColor3),
-            ),
-          )
-        ],
+        ),
       ),
     );
   }
