@@ -93,12 +93,14 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 IconButton(
+                  splashRadius: 30,
+                  padding: EdgeInsets.zero,
                   color: Colors.white,
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AddTaskScreen(),
+                        builder: (context) => AddTaskScreen(),
                       ),
                     );
                   },
