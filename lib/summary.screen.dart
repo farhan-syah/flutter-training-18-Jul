@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_18_jul/widgets/image-container.widget.dart';
+import 'package:training_18_jul/widgets/month-slider.widget.dart';
 
 class SummaryScreen extends StatelessWidget {
   const SummaryScreen({Key? key}) : super(key: key);
@@ -19,7 +20,9 @@ class SummaryScreen extends StatelessWidget {
               border: Border.all(color: Colors.blueGrey.shade100),
             ),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: const Icon(
                 Icons.arrow_back,
                 color: Colors.black,
@@ -40,6 +43,14 @@ class SummaryScreen extends StatelessWidget {
             width: 30,
           ),
         ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: const [
+            MonthSlider(),
+          ],
+        ),
       ),
     );
   }
