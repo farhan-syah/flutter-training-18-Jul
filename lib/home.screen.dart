@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:training_18_jul/add-task.screen.dart';
 import 'package:training_18_jul/const.dart';
 import 'package:training_18_jul/summary.screen.dart';
 
@@ -69,18 +70,49 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              'Hi Ghulam',
-              style: TextStyle(
-                fontSize: 32,
-                color: textColor2,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 3),
-            Text(
-              '6 Tasks are pending',
-              style: TextStyle(fontSize: 16, color: textColor3),
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Hi Ghulam',
+                        style: TextStyle(
+                          fontSize: 32,
+                          color: textColor2,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 3),
+                      Text(
+                        '6 Tasks are pending',
+                        style: TextStyle(fontSize: 16, color: textColor3),
+                      ),
+                    ],
+                  ),
+                ),
+                IconButton(
+                  color: Colors.white,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AddTaskScreen(),
+                      ),
+                    );
+                  },
+                  icon: Container(
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.indigo,
+                    ),
+                    child: const Icon(
+                      Icons.add,
+                    ),
+                  ),
+                )
+              ],
             ),
             const SizedBox(height: 30),
             const Container1(),
