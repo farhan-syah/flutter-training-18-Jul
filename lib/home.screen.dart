@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:training_18_jul/const.dart';
 import 'package:training_18_jul/summary.screen.dart';
 
+import 'widgets/image-container.widget.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -255,25 +257,6 @@ class Container1 extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-}
-
-class ImageContainer extends StatelessWidget {
-  final String assetImagePath;
-
-  const ImageContainer({
-    required this.assetImagePath,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(3),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50), color: Colors.white),
-      child: CircleAvatar(backgroundImage: AssetImage(assetImagePath)),
     );
   }
 }
