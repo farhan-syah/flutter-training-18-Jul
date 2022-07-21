@@ -21,6 +21,10 @@ class _DateSliderState extends State<DateSlider> {
           itemBuilder: ((context, index) => _CustomContainer(
                 date: index + 1,
                 active: currentIndex == index,
+                onTap: () {
+                  currentIndex = index;
+                  setState(() {});
+                },
               )),
           separatorBuilder: ((context, index) => const SizedBox(
                 width: 20,
@@ -34,9 +38,14 @@ class _DateSliderState extends State<DateSlider> {
 class _CustomContainer extends StatelessWidget {
   final int date;
   final bool active;
+  final GestureTapCallback onTap;
 
-  const _CustomContainer({Key? key, required this.date, required this.active})
-      : super(key: key);
+  const _CustomContainer({
+    Key? key,
+    required this.date,
+    required this.active,
+    required this.onTap,
+  }) : super(key: key);
 
   Color getTextColor() {
     return active ? Colors.white : Colors.indigo;
@@ -58,7 +67,7 @@ class _CustomContainer extends StatelessWidget {
         child: Material(
           color: getBackgroundColor(),
           child: InkWell(
-            onTap: () {},
+            onTap: onTap,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
