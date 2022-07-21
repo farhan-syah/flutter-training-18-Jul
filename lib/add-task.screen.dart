@@ -36,8 +36,15 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               },
               child: const Text('Add Task'),
             ),
-            ...List.generate(taskList.length,
-                (index) => _TaskContainer(task: taskList[index]))
+            ...List.generate(
+              taskList.length,
+              (index) => _TaskContainer(
+                  task: taskList[index],
+                  onPressed: () {
+                    taskList.removeAt(index);
+                    setState(() {});
+                  }),
+            )
           ],
         ),
       )),
@@ -46,9 +53,11 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 }
 
 class _TaskContainer extends StatelessWidget {
+  final GestureTapCallback onPressed;
   final String task;
   const _TaskContainer({
     Key? key,
+    required this.onPressed,
     required this.task,
   }) : super(key: key);
 
@@ -64,7 +73,7 @@ class _TaskContainer extends StatelessWidget {
         trailing: IconButton(
           color: Colors.red,
           icon: const Icon(Icons.cancel),
-          onPressed: () {},
+          onPressed: onPressed,
         ),
       ),
     );
