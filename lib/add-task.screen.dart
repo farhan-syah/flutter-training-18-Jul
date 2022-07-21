@@ -39,11 +39,33 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             ...List.generate(
               taskList.length,
               (index) => _TaskContainer(
-                  task: taskList[index],
-                  onPressed: () {
-                    taskList.removeAt(index);
-                    setState(() {});
-                  }),
+                task: taskList[index],
+                onPressed: () {
+                  // Show Dialog
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      content: const Text(
+                          'Are you sure you want to delete this task?'),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              taskList.removeAt(index);
+                              Navigator.pop(context);
+                              setState(() {});
+                            },
+                            child: const Text('Yes')),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text('No'),
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ),
             )
           ],
         ),
