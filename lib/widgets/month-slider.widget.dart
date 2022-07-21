@@ -10,6 +10,22 @@ class MonthSlider extends StatefulWidget {
 class _MonthSliderState extends State<MonthSlider> {
   int index = 3;
 
+  int getPreviousMonthIndex() {
+    if (index == 0) {
+      return 11;
+    } else {
+      return index - 1;
+    }
+  }
+
+  int getNextMonthIndex() {
+    if (index == 11) {
+      return 0;
+    } else {
+      return index + 1;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return IconTheme(
@@ -18,7 +34,11 @@ class _MonthSliderState extends State<MonthSlider> {
         children: [
           InkWell(
             onTap: () {
-              index--;
+              if (index == 0) {
+                index = 11;
+              } else {
+                index--;
+              }
               setState(() {});
             },
             child: Container(
@@ -28,7 +48,7 @@ class _MonthSliderState extends State<MonthSlider> {
                 children: [
                   const Icon(Icons.arrow_back),
                   const SizedBox(width: 10),
-                  Text(month[index - 1]),
+                  Text(month[getPreviousMonthIndex()]),
                 ],
               ),
             ),
@@ -46,7 +66,11 @@ class _MonthSliderState extends State<MonthSlider> {
           ),
           InkWell(
             onTap: () {
-              index++;
+              if (index == 11) {
+                index = 0;
+              } else {
+                index++;
+              }
               setState(() {});
             },
             child: Container(
@@ -55,7 +79,7 @@ class _MonthSliderState extends State<MonthSlider> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(month[index + 1]),
+                  Text(month[getNextMonthIndex()]),
                   const SizedBox(width: 10),
                   const Icon(Icons.arrow_forward),
                 ],
